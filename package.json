@@ -84,13 +84,13 @@
     "remark-rehype": "^11.1.2",
     "remark-smartypants": "^3.0.2",
     "rfdc": "^1.4.1",
-    "satori": "^0.19.2",
+    "satori": "^0.26.0",
     "serve-handler": "^6.1.6",
     "sharp": "^0.34.5",
-    "shiki": "^3.22.0",
+    "shiki": "^4.1.0",
     "source-map-support": "^0.5.21",
     "to-vfile": "^8.0.0",
-    "toml": "^3.0.0",
+    "toml": "^4.1.1",
     "unified": "^11.0.5",
     "unist-util-visit": "^5.0.0",
     "vfile": "^6.0.3",
@@ -108,9 +108,9 @@
     "@types/source-map-support": "^0.5.10",
     "@types/ws": "^8.18.1",
     "@types/yargs": "^17.0.35",
-    "esbuild": "^0.27.3",
+    "esbuild": "^0.28.0",
     "prettier": "^3.8.1",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   }
 }
