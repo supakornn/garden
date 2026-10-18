@@ -9,6 +9,8 @@ import { QuartzPluginData } from "../../plugins/vfile"
 import { ComponentChildren } from "preact"
 import { concatenateResources } from "../../util/resources"
 import { trieFromAllFiles } from "../../util/ctx"
+import Bookshelf from "../Bookshelf"
+import { collectBooks } from "../bookData"
 
 interface FolderContentOptions {
   /**
@@ -29,6 +31,18 @@ export default ((opts?: Partial<FolderContentOptions>) => {
 
   const FolderContent: QuartzComponent = (props: QuartzComponentProps) => {
     const { tree, fileData, allFiles, cfg } = props
+
+    if (fileData.slug === "books/index") {
+      return (
+        <div class="popover-hint">
+          <article>{htmlToJsx(fileData.filePath!, tree)}</article>
+          <Bookshelf
+            books={collectBooks(allFiles, props.ctx.allSlugs)}
+            currentSlug={fileData.slug}
+          />
+        </div>
+      )
+    }
 
     const trie = (props.ctx.trie ??= trieFromAllFiles(allFiles))
     const folder = trie.findNode(fileData.slug!.split("/"))
