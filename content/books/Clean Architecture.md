@@ -2,7 +2,6 @@
 title: Clean Architecture
 author: Robert C. Martin
 notes: "[[notes/Clean Architecture]]"
-finished: "true"
-created: 18/10/2026
+year: "2026"
 ---
-My reading notes: [[notes/Clean Architecture|Clean Architecture]].
+![[Pasted image 20261018230317.png]]

@@ -1,5 +1,5 @@
 ---
-created: 2026-05-28
+created: 06/10/2026
 title: Eat That Frog!
 tags:
   - seed
