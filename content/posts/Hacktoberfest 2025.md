@@ -2,7 +2,7 @@
 title: Hacktoberfest 2025
 tags:
   - evergreen
-created: 2026-02-02
+created: 06/10/2026
 ---
 Before Hacktoberfest, I had wanted to become an open-source contributor for a long time. I was very excited about contributing to the world of software, but at the same time, I did not think I was good enough to help real projects. I was confused and lacked confidence because I was afraid that my contributions might break something, create more bugs, or make maintainers waste time fixing mistakes that I introduced.
 
