@@ -98,7 +98,13 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
             const cssclasses = coerceToArray(coalesceAliases(data, ["cssclasses", "cssclass"]))
             if (cssclasses) data.cssclasses = cssclasses
 
-            const socialImage = coalesceAliases(data, ["socialImage", "image", "cover"])
+            // Book covers are vault images (possibly wikilinks), not static OG image paths.
+            const socialImage = coalesceAliases(
+              data,
+              file.data.slug?.startsWith("books/")
+                ? ["socialImage", "image"]
+                : ["socialImage", "image", "cover"],
+            )
 
             const created = coalesceAliases(data, ["created", "date"])
             if (created) {

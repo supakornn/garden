@@ -16,9 +16,7 @@ const PageTitle: QuartzComponent = (props: QuartzComponentProps) => {
       <div class="site-header-top">
         <div class="site-brand">
           <h2 class="page-title">
-            <a href={baseDir}>
-              {title}
-            </a>
+            <a href={baseDir}>{title}</a>
           </h2>
           <a
             href="https://webring.wonderful.software#supakorn.me"
