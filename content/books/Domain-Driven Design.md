@@ -2,6 +2,6 @@
 title: Domain-Driven Design
 author: Eric Evans
 year:
-notes:
+notes: "[[Domain Driven Design]]"
 ---
 ![[Pasted image 20261018231309.png]]
