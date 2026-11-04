@@ -12,6 +12,7 @@ import { BuildCtx } from "../../util/ctx"
 import { QuartzPluginData } from "../vfile"
 import fs from "node:fs/promises"
 import { styleText } from "util"
+import { FontSpecification } from "../../util/theme"
 
 const defaultOptions: SocialImageOptions = {
   colorScheme: "lightMode",
@@ -101,7 +102,10 @@ async function processOgImage(
 }
 
 export const CustomOgImagesEmitterName = "CustomOgImages"
-export const CustomOgImages: QuartzEmitterPlugin<Partial<SocialImageOptions>> = (userOpts) => {
+// A separate font can be used when the site's local font is unavailable to Satori.
+export const CustomOgImages: QuartzEmitterPlugin<
+  Partial<SocialImageOptions> & { font?: FontSpecification }
+> = (userOpts) => {
   const fullOptions = { ...defaultOptions, ...userOpts }
 
   return {
@@ -111,8 +115,8 @@ export const CustomOgImages: QuartzEmitterPlugin<Partial<SocialImageOptions>> = 
     },
     async *emit(ctx, content, _resources) {
       const cfg = ctx.cfg.configuration
-      const headerFont = cfg.theme.typography.header
-      const bodyFont = cfg.theme.typography.body
+      const headerFont = userOpts?.font ?? cfg.theme.typography.header
+      const bodyFont = userOpts?.font ?? cfg.theme.typography.body
       const fonts = await getSatoriFonts(headerFont, bodyFont)
 
       for (const [_tree, vfile] of content) {
@@ -122,8 +126,8 @@ export const CustomOgImages: QuartzEmitterPlugin<Partial<SocialImageOptions>> = 
     },
     async *partialEmit(ctx, _content, _resources, changeEvents) {
       const cfg = ctx.cfg.configuration
-      const headerFont = cfg.theme.typography.header
-      const bodyFont = cfg.theme.typography.body
+      const headerFont = userOpts?.font ?? cfg.theme.typography.header
+      const bodyFont = userOpts?.font ?? cfg.theme.typography.body
       const fonts = await getSatoriFonts(headerFont, bodyFont)
 
       // find all slugs that changed or were added
