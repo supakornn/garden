@@ -1,6 +1,5 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
-import { GeistFonts } from "./quartz/plugins/emitters/geistFonts"
 
 /**
  * Quartz 4 Configuration
@@ -20,11 +19,11 @@ const config: QuartzConfig = {
     ignorePatterns: ["private", "templates"],
     defaultDateType: "created",
     theme: {
-      fontOrigin: "local",
+      fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Geist Serif",
-        body: "Geist Serif",
+        header: "Geist",
+        body: "Geist",
         code: "Geist Mono",
       },
       colors: {
@@ -86,7 +85,6 @@ const config: QuartzConfig = {
       }),
       Plugin.Assets(),
       Plugin.Static(),
-      GeistFonts(),
       Plugin.Favicon(),
       Plugin.NotFoundPage(),
       // // Comment out CustomOgImages to speed up build time
