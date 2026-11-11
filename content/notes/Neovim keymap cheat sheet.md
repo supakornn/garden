@@ -1,9 +1,10 @@
 ---
 created: 2026-11-07
 ---
+My neovim config: https://github.com/supakornn/dotfiles
+
 Leader is **Space**. Press Space and pause to discover shortcuts.
 Most shortcuts below are used in **Normal mode**. Plugin shortcuts follow LazyVim defaults and may vary with locally installed versions; use the in-editor help to confirm.
-
 ### Essentials
 
 - `Esc` or `jk` — exit Insert mode (this config uses `jk`, not `jj`).
