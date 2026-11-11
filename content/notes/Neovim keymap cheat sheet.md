@@ -1,5 +1,8 @@
 ---
 created: 2026-11-07
+tags:
+  - seed
+title: Neovim keymap cheat sheet
 ---
 My neovim config: https://github.com/supakornn/dotfiles
 
